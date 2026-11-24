@@ -3121,3 +3121,24 @@ a:hover {
     min-height: 360px;
   }
 }
+
+
+/* «Итого» и калькулятор доставки прилипают вместе */
+.cart-aside-sticky {
+  position: sticky;
+  top: calc(var(--navbar-height, 76px) + 18px);
+  max-height: calc(100vh - var(--navbar-height, 76px) - 36px);
+  overflow-y: auto;
+  padding-right: 4px;
+  scrollbar-width: thin;
+  overscroll-behavior: contain;
+}
+
+@media (max-width: 991.98px) {
+  .cart-aside-sticky {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
+  }
+}
