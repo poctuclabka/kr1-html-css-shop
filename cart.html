@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Корзина зоомагазина «Лапки и Хвосты»: проверьте товары, рассчитайте доставку и оформите заказ.">
+  <meta name="theme-color" content="#fcfaf7">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Корзина — Лапки и Хвосты">
+  <meta property="og:description" content="Корзина зоомагазина «Лапки и Хвосты»: проверьте товары, рассчитайте доставку и оформите заказ.">
+  <meta property="og:image" content="https://poctuclabka.github.io/kr1-html-css-shop/images/cat-hero.jpg">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Корзина — Лапки и Хвосты</title>
+  <script src="js/theme.js?v=4"></script>
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css?v=4">
+</head>
+<body class="d-flex flex-column min-vh-100" >
+  <a class="visually-hidden-focusable" href="#main-content">Перейти к содержимому</a>
+
+<header class="site-header">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container align-items-center">
+      <a class="navbar-brand" href="index.html">
+        <span class="navbar-brand__paw"><svg class="paw-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" focusable="false"><path d="M16 28c-4 0-8-2-8-6 0-2 2-4 4-4 1 0 2 1 3 1s2-1 3-1c2 0 4 2 4 4 0 4-4 6-8 6zM8 14c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3zm16 0c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3zm-8-4c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3z"/></svg></span>
+        <span>Лапки и Хвосты<span class="navbar-brand__sub">зоомагазин</span></span>
+      </a>
+
+      <div class="header-controls ms-auto order-lg-3">
+        <a class="cart-link cart-link--compact d-lg-none" href="cart.html" aria-label="Корзина">
+          <span class="cart-link__icon" aria-hidden="true">🛒</span>
+          <span class="cart-link__count js-cart-count" hidden>0</span>
+        </a>
+        <div class="d-none d-lg-flex align-items-center gap-2">
+          <a class="cart-link" href="cart.html">
+            <span class="cart-link__icon" aria-hidden="true">🛒</span>
+            <span class="cart-link__text">Корзина</span>
+            <span class="cart-link__count js-cart-count" hidden>0</span>
+          </a>
+          <button type="button" class="theme-toggle js-theme-toggle" aria-label="Переключить тему" aria-pressed="false">🌙</button>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Переключить навигацию">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse order-lg-2" id="main-nav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+        </ul>
+        <div class="d-flex d-lg-none align-items-center gap-2 pt-3 mt-2">
+          <button type="button" class="theme-toggle js-theme-toggle" aria-label="Переключить тему" aria-pressed="false">🌙</button>
+          <span class="text-white-50 small">Светлая / тёмная тема</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+  <main class="flex-grow-1" id="main-content">
+
+<div class="container">
+
+<div class="page-head">
+  <nav aria-label="Хлебные крошки"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Главная</a></li><li class="breadcrumb-item"><a href="catalog.html">Каталог</a></li><li class="breadcrumb-item active" aria-current="page">Корзина</li></ol></nav>
+  <h1 class="page-title">Корзина</h1>
+  <p class="page-subtitle">Проверьте состав заказа и рассчитайте стоимость доставки. Товары сохраняются в браузере.</p>
+</div>
+
+  <div class="empty-state d-none" id="cart-empty">
+    <span class="empty-state__icon" aria-hidden="true">🛒</span>
+    <h2>Пока пусто</h2>
+    <p>Добавьте корм, игрушку или лежанку — и возвращайтесь к оформлению. Мы сохраним выбор.</p>
+    <a class="btn btn-primary" href="catalog.html">Перейти в каталог</a>
+  </div>
+
+  <div class="row g-4" id="cart-content">
+    <div class="col-lg-8">
+      <div class="cart-list" id="cart-items"></div>
+    </div>
+    <div class="col-lg-4">
+      <div class="cart-summary cart-summary-sticky">
+        <h2>Итого</h2>
+        <div class="summary-row"><span>Товары (<span data-cart-count>0</span>)</span><strong data-cart-subtotal>0 ₽</strong></div>
+        <div class="summary-row"><span>Доставка</span><strong data-cart-delivery>0 ₽</strong></div>
+        <div class="summary-row summary-row--total"><span>К оплате</span><strong data-cart-total>0 ₽</strong></div>
+        <div class="free-delivery" data-free-delivery>До бесплатной доставки — 3 000 ₽</div>
+        <a class="btn btn-primary w-100 mt-3" href="order.html">Перейти к оформлению</a>
+        <button type="button" class="btn btn-outline-secondary w-100 mt-2" id="clear-cart">Очистить корзину</button>
+        <p class="summary-note">Итоговая стоимость доставки зависит от города и способа получения. Рассчитайте её ниже.</p>
+      </div>
+
+      <section class="delivery-calculator" aria-labelledby="delivery-title">
+        <h2 id="delivery-title">Калькулятор доставки</h2>
+        <p class="delivery-calculator__subtitle">Выберите город и способ получения — стоимость сразу появится в итоге.</p>
+        <div class="row g-2">
+          <div class="col-12 col-sm-6">
+            <label class="form-label small" for="delivery-city">Город</label>
+            <select class="form-select js-delivery-city" id="delivery-city"></select>
+          </div>
+          <div class="col-12 col-sm-6">
+            <label class="form-label small" for="delivery-method">Способ получения</label>
+            <select class="form-select js-delivery-method" id="delivery-method"></select>
+          </div>
+        </div>
+        <div class="delivery-result" aria-live="polite"><span>Стоимость доставки</span><strong data-delivery-cost>0 ₽</strong></div>
+        <p class="summary-note" data-delivery-note></p>
+      </section>
+    </div>
+  </div>
+</div>
+
+  </main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-lg-4">
+        <a href="index.html" class="footer-brand">
+          <svg class="footer-brand__paw" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" focusable="false"><path d="M16 28c-4 0-8-2-8-6 0-2 2-4 4-4 1 0 2 1 3 1s2-1 3-1c2 0 4 2 4 4 0 4-4 6-8 6zM8 14c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3zm16 0c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3zm-8-4c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3z"/></svg> Лапки и Хвосты
+        </a>
+        <p>Зоомагазин для тех, кто заботится о питомцах. Корма, игрушки, лежанки и аксессуары — с любовью к каждому хвосту.</p>
+        <div class="footer-social" aria-label="Социальные сети">
+          <a href="#" aria-label="ВКонтакте" onclick="return false;">ВК</a>
+          <a href="#" aria-label="Telegram" onclick="return false;">TG</a>
+          <a href="#" aria-label="YouTube" onclick="return false;">YT</a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h2>Каталог</h2>
+        <ul class="footer-links">
+          <li><a href="catalog.html?category=cats">🐱 Кошки</a></li>
+<li><a href="catalog.html?category=dogs">🐶 Собаки</a></li>
+<li><a href="catalog.html?category=rodents">🐹 Грызуны</a></li>
+<li><a href="catalog.html?category=birds">🦜 Птицы</a></li>
+<li><a href="catalog.html?category=fish">🐠 Рыбы</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-3">
+        <h2>Покупателям</h2>
+        <ul class="footer-links">
+          <li><a href="catalog.html">Все товары</a></li>
+          <li><a href="cart.html">Корзина и доставка</a></li>
+          <li><a href="order.html">Оформление заказа</a></li>
+          <li><a href="index.html#faq">Частые вопросы</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-lg-3">
+        <h2>Контакты</h2>
+        <ul class="footer-contact">
+          <li><span class="footer-contact__icon">📍</span><span>г. Москва, ул. Кошачья, д. 12</span></li>
+          <li><span class="footer-contact__icon">📞</span><a href="tel:+79993467891">+7 (999) 346-78-91</a></li>
+          <li><span class="footer-contact__icon">🕒</span><span>Пн–Пт 10:00–20:00, Сб–Вс 10:00–18:00</span></li>
+          <li><span class="footer-contact__icon">📧</span><a href="mailto:hello@lapki-hvosty.ru">hello@lapki-hvosty.ru</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 «Лапки и Хвосты». Учебный проект.</span>
+    </div>
+  </div>
+</footer>
+
+  <button type="button" class="scroll-top" id="scroll-top" aria-label="Наверх" title="Наверх">
+    <svg class="scroll-top__icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" focusable="false"><path d="M16 28c-4 0-8-2-8-6 0-2 2-4 4-4 1 0 2 1 3 1s2-1 3-1c2 0 4 2 4 4 0 4-4 6-8 6zM8 14c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3zm16 0c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3zm-8-4c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3z"/></svg>
+  </button>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js?v=4"></script>
+  <script src="js/cart.js?v=4"></script>
+  <script src="js/recent.js?v=4"></script>
+</body>
+</html>

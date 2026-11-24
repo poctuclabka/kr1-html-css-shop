@@ -1,169 +1,628 @@
 <!DOCTYPE html>
-
-<html lang = "ru">
-
+<html lang="ru">
 <head>
-
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Каталог товаров учебного интернет-магазина.">
-  <title>Каталог товаров — Учебный интернет-магазин</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Каталог зоотоваров: корма, игрушки, лежанки, клетки и аквариумы для кошек, собак, грызунов, птиц и рыб.">
+  <meta name="theme-color" content="#fcfaf7">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Учебный интернет-магазин">
-  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
-  <meta property="og:image" content="https://tobleron333.github.io/kr1-html-css-shop/images/preview.jpg">
-
+  <meta property="og:title" content="Каталог товаров — Лапки и Хвосты">
+  <meta property="og:description" content="Каталог зоотоваров: корма, игрушки, лежанки, клетки и аквариумы для кошек, собак, грызунов, птиц и рыб.">
+  <meta property="og:image" content="https://poctuclabka.github.io/kr1-html-css-shop/images/cat-hero.jpg">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Каталог товаров — Лапки и Хвосты</title>
+  <script src="js/theme.js?v=4"></script>
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css?v=4">
 </head>
+<body class="d-flex flex-column min-vh-100" >
+  <a class="visually-hidden-focusable" href="#main-content">Перейти к содержимому</a>
 
-<body>
+<header class="site-header">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container align-items-center">
+      <a class="navbar-brand" href="index.html">
+        <span class="navbar-brand__paw"><svg class="paw-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" focusable="false"><path d="M16 28c-4 0-8-2-8-6 0-2 2-4 4-4 1 0 2 1 3 1s2-1 3-1c2 0 4 2 4 4 0 4-4 6-8 6zM8 14c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3zm16 0c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3zm-8-4c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3z"/></svg></span>
+        <span>Лапки и Хвосты<span class="navbar-brand__sub">зоомагазин</span></span>
+      </a>
 
-  <header class="site-header">
-    <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
-
-      <nav class="site-nav" aria-label="Основная навигация">
-        <ul class="site-nav__list">
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html">Главная</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="product.html">Карточка товара</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="order.html">Заявка</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="contacts.html">Контакты</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a class="breadcrumbs__link" href="index.html">Главная</a>
-      <span class="breadcrumbs__current">Каталог</span>
-    </nav>
-
-    <section class="section">
-      <h1>Каталог товаров</h1>
-      <p>
-        На этой странице представлен учебный каталог товаров.
-        В дальнейшем здесь будут добавлены фильтры, сортировка и более
-        подробные карточки.
-      </p>
-    </section>
-
-    <section class="catalog-layout">
-
-    <aside class="catalog-filters">
-      <h2>Фильтры</h2>
-
-      <form class="filters-form" action="#" method="get">
-        <fieldset>
-          <legend>Категория</legend>
-
-          <label>
-            <input type="checkbox" name="category" value="all">
-            Все товары
-          </label>
-
-          <label>
-            <input type="checkbox" name="category" value="popular">
-            Популярные
-          </label>
-
-          <label>
-            <input type="checkbox" name="category" value="new">
-            Новинки
-          </label>
-        </fieldset>
-
-        <fieldset>
-          <legend>Цена</legend>
-
-          <label for="price-from">От</label>
-          <input id="price-from" name="price-from" type="number" min="0" placeholder="0">
-
-          <label for="price-to">До</label>
-          <input id="price-to" name="price-to" type="number" min="0" placeholder="5000">
-        </fieldset>
-
-        <button class="button button--primary" type="submit">Применить</button>
-      </form>
-    </aside>
-
-    <section class="catalog-products">
-      <h2>Список товаров</h2>
-
-      <div class="products-grid">
-
-        <article class="product-card">
-          <h3 class="product-card__title">Товар 1</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 1000 руб.</p>
-          <a class="button button--primary" href="product.html">Подробнее</a>
-        </article>
-
-        <article class="product-card">
-          <h3 class="product-card__title">Товар 2</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 1500 руб.</p>
-          <a class="button button--primary" href="product.html">Подробнее</a>
-        </article>
-
-        <article class="product-card">
-          <h3 class="product-card__title">Товар 3</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 2000 руб.</p>
-          <a class="button button--primary" href="product.html">Подробнее</a>
-        </article>
-
-          <article class="product-card product-card--new">
-            <h3 class="product-card__title">Товар 4</h3>
-            <span class="product-card__badge product-card__badge--new">Новинка</span>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">Цена: 2500 руб.</p>
-            <a class="button button--primary" href="product.html#product-4">Подробнее</a>
-          </article>
-
-          <article class="product-card product-card--discount">
-            <h3 class="product-card__title">Товар 5</h3>
-            <span class="product-card__badge product-card__badge--discount">Скидка</span>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">Цена: 3000 руб.</p>
-            <a class="button button--primary" href="product.html#product-5">Подробнее</a>
-          </article>
-
-          <article class="product-card">
-            <h3 class="product-card__title">Товар 6</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">Цена: 3500 руб.</p>
-            <a class="button button--primary" href="product.html">Подробнее</a>
-          </article>
-
+      <div class="header-controls ms-auto order-lg-3">
+        <a class="cart-link cart-link--compact d-lg-none" href="cart.html" aria-label="Корзина">
+          <span class="cart-link__icon" aria-hidden="true">🛒</span>
+          <span class="cart-link__count js-cart-count" hidden>0</span>
+        </a>
+        <div class="d-none d-lg-flex align-items-center gap-2">
+          <a class="cart-link" href="cart.html">
+            <span class="cart-link__icon" aria-hidden="true">🛒</span>
+            <span class="cart-link__text">Корзина</span>
+            <span class="cart-link__count js-cart-count" hidden>0</span>
+          </a>
+          <button type="button" class="theme-toggle js-theme-toggle" aria-label="Переключить тему" aria-pressed="false">🌙</button>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Переключить навигацию">
+          <span class="navbar-toggler-icon"></span>
+        </button>
       </div>
-    </section>
 
-  </section>
+      <div class="collapse navbar-collapse order-lg-2" id="main-nav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link active" href="catalog.html" aria-current="page">Каталог</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+        </ul>
+        <div class="d-flex d-lg-none align-items-center gap-2 pt-3 mt-2">
+          <button type="button" class="theme-toggle js-theme-toggle" aria-label="Переключить тему" aria-pressed="false">🌙</button>
+          <span class="text-white-50 small">Светлая / тёмная тема</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+  <main class="flex-grow-1" id="main-content">
+
+<div class="container">
+
+<div class="page-head">
+  <nav aria-label="Хлебные крошки"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Главная</a></li><li class="breadcrumb-item active" aria-current="page">Каталог</li></ol></nav>
+  <h1 class="page-title">Каталог товаров</h1>
+  <p class="page-subtitle">Всё для питомцев в одном месте: фильтруйте по виду животного, категории и цене. Не нашли нужное — позвоните, поможем подобрать.</p>
+</div>
+
+  <div class="row g-4">
+    <div class="col-lg-3">
+      <div class="catalog-filters">
+        <form class="filter-card" id="filter-form">
+          <fieldset>
+            <legend class="filter-title">Питомец</legend>
+            <div class="filter-options"><label class="filter-option"><input type="radio" name="category" value="all" checked><span>Все питомцы</span></label>
+<label class="filter-option"><input type="radio" name="category" value="cats"><span>🐱 Кошки</span></label>
+<label class="filter-option"><input type="radio" name="category" value="dogs"><span>🐶 Собаки</span></label>
+<label class="filter-option"><input type="radio" name="category" value="rodents"><span>🐹 Грызуны</span></label>
+<label class="filter-option"><input type="radio" name="category" value="birds"><span>🦜 Птицы</span></label>
+<label class="filter-option"><input type="radio" name="category" value="fish"><span>🐠 Рыбы</span></label></div>
+          </fieldset>
+
+          <div class="mt-3">
+            <label class="filter-title d-block" for="filter-type">Категория товара</label>
+            <select class="form-select" id="filter-type">
+              <option value="all">Все категории</option>
+              <option value="food">Корма</option>
+<option value="toys">Игрушки</option>
+<option value="comfort">Лежанки и домики</option>
+<option value="cages">Клетки и аквариумы</option>
+<option value="care">Уход и аксессуары</option>
+            </select>
+          </div>
+
+          <div class="mt-3">
+            <span class="filter-title d-block">Цена, ₽</span>
+            <div class="filter-price">
+              <input class="form-control" id="filter-price-min" type="number" min="0" placeholder="от" aria-label="Минимальная цена">
+              <input class="form-control" id="filter-price-max" type="number" min="0" placeholder="до" aria-label="Максимальная цена">
+            </div>
+          </div>
+
+          <div class="form-check mt-3">
+            <input class="form-check-input" id="filter-stock" type="checkbox">
+            <label class="form-check-label" for="filter-stock">Только в наличии</label>
+          </div>
+
+          <button type="button" class="btn btn-outline-secondary filter-reset" id="reset-filters">Сбросить фильтры</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-lg-9">
+      <div class="catalog-toolbar">
+        <div class="catalog-toolbar__search">
+          <div class="input-group">
+            <span class="input-group-text" aria-hidden="true">🔍</span>
+            <input class="form-control" id="catalog-search" type="search" placeholder="Найти корм, игрушку, лежанку…" aria-label="Поиск по каталогу">
+          </div>
+        </div>
+        <div class="catalog-toolbar__sort">
+          <select class="form-select" id="catalog-sort" aria-label="Сортировка товаров">
+            <option value="popular">Сначала популярные</option>
+            <option value="price-asc">Сначала дешёвые</option>
+            <option value="price-desc">Сначала дорогие</option>
+            <option value="rating">По рейтингу</option>
+          </select>
+        </div>
+        <span class="catalog-toolbar__count" id="catalog-count" aria-live="polite">12 товаров</span>
+      </div>
+
+      <div class="row g-4" id="catalog-grid"><div class="col-12 col-sm-6 col-xl-4">
+<article class="product-card"
+         data-name="Сухой корм для кошек «Мурлыка»"
+         data-category="cats"
+         data-type="food"
+         data-price="1290"
+         data-stock="1"
+         data-rating="5.0"
+         data-badge="hit">
+  <a class="product-card__media" href="product-cat-food-murlyka.html" aria-label="Открыть товар «Сухой корм для кошек «Мурлыка»»">
+    <img src="images/cat-food.jpg" alt="Сухой корм для кошек «Мурлыка»" loading="lazy" width="640" height="480">
+    <div class="product-card__badges"><span class="badge-soft badge-soft--hit">Хит продаж</span><span class="badge-soft badge-soft--sale">−13%</span></div>
+
+  </a>
+  <div class="product-card__body">
+    <div class="product-card__meta"><span>Кошки</span><span>Корма</span></div>
+    <h3 class="product-card__title"><a href="product-cat-food-murlyka.html">Сухой корм для кошек «Мурлыка»</a></h3>
+    <p class="product-card__description">Полнорационный корм с индейкой и рисом для взрослых кошек. 2 кг.</p>
+    <div class="rating">
+      <span class="rating__stars" role="img" aria-label="Рейтинг 5.0 из 5">★★★★★</span>
+      <span class="rating__value">5.0</span>
+      <span>(2)</span>
+    </div>
+    <div class="product-card__footer">
+      <div class="product-card__price"><strong>1 290 ₽</strong><s>1 490 ₽</s></div>
+      <button type="button" class="product-card__add" data-add-to-cart
+              data-slug="cat-food-murlyka" data-name="Сухой корм для кошек «Мурлыка»"
+              data-price="1290" data-image="images/cat-food.jpg"
+              data-category="Кошки" data-type="Корма"
+              aria-label="Добавить «Сухой корм для кошек «Мурлыка»» в корзину"
+              title="Добавить в корзину">+</button>
+    </div>
+  </div>
+</article></div>
+<div class="col-12 col-sm-6 col-xl-4">
+<article class="product-card"
+         data-name="Лежанка-облако для кошек"
+         data-category="cats"
+         data-type="comfort"
+         data-price="2490"
+         data-stock="1"
+         data-rating="4.5"
+         data-badge="new">
+  <a class="product-card__media" href="product-cat-bed-cloud.html" aria-label="Открыть товар «Лежанка-облако для кошек»">
+    <img src="images/cat-bed.jpg" alt="Лежанка-облако для кошек" loading="lazy" width="640" height="480">
+    <div class="product-card__badges"><span class="badge-soft badge-soft--new">Новинка</span></div>
+
+  </a>
+  <div class="product-card__body">
+    <div class="product-card__meta"><span>Кошки</span><span>Лежанки и домики</span></div>
+    <h3 class="product-card__title"><a href="product-cat-bed-cloud.html">Лежанка-облако для кошек</a></h3>
+    <p class="product-card__description">Мягкая лежанка с высокими бортиками — любимое место для сна и отдыха.</p>
+    <div class="rating">
+      <span class="rating__stars" role="img" aria-label="Рейтинг 4.5 из 5">★★★★☆</span>
+      <span class="rating__value">4.5</span>
+      <span>(2)</span>
+    </div>
+    <div class="product-card__footer">
+      <div class="product-card__price"><strong>2 490 ₽</strong></div>
+      <button type="button" class="product-card__add" data-add-to-cart
+              data-slug="cat-bed-cloud" data-name="Лежанка-облако для кошек"
+              data-price="2490" data-image="images/cat-bed.jpg"
+              data-category="Кошки" data-type="Лежанки и домики"
+              aria-label="Добавить «Лежанка-облако для кошек» в корзину"
+              title="Добавить в корзину">+</button>
+    </div>
+  </div>
+</article></div>
+<div class="col-12 col-sm-6 col-xl-4">
+<article class="product-card"
+         data-name="Игрушка-дразнилка «Пёрышко»"
+         data-category="cats"
+         data-type="toys"
+         data-price="390"
+         data-stock="1"
+         data-rating="4.5"
+         data-badge="sale">
+  <a class="product-card__media" href="product-cat-toy-feather.html" aria-label="Открыть товар «Игрушка-дразнилка «Пёрышко»»">
+    <img src="images/cat-toy.avif" alt="Игрушка-дразнилка «Пёрышко»" loading="lazy" width="640" height="480">
+    <div class="product-card__badges"><span class="badge-soft badge-soft--sale">Скидка</span></div>
+
+  </a>
+  <div class="product-card__body">
+    <div class="product-card__meta"><span>Кошки</span><span>Игрушки</span></div>
+    <h3 class="product-card__title"><a href="product-cat-toy-feather.html">Игрушка-дразнилка «Пёрышко»</a></h3>
+    <p class="product-card__description">Набор из трёх дразнилок с перьями на гибкой деревянной палочке.</p>
+    <div class="rating">
+      <span class="rating__stars" role="img" aria-label="Рейтинг 4.5 из 5">★★★★☆</span>
+      <span class="rating__value">4.5</span>
+      <span>(2)</span>
+    </div>
+    <div class="product-card__footer">
+      <div class="product-card__price"><strong>390 ₽</strong><s>450 ₽</s></div>
+      <button type="button" class="product-card__add" data-add-to-cart
+              data-slug="cat-toy-feather" data-name="Игрушка-дразнилка «Пёрышко»"
+              data-price="390" data-image="images/cat-toy.avif"
+              data-category="Кошки" data-type="Игрушки"
+              aria-label="Добавить «Игрушка-дразнилка «Пёрышко»» в корзину"
+              title="Добавить в корзину">+</button>
+    </div>
+  </div>
+</article></div>
+<div class="col-12 col-sm-6 col-xl-4">
+<article class="product-card"
+         data-name="Сухой корм для собак «Верный друг»"
+         data-category="dogs"
+         data-type="food"
+         data-price="3190"
+         data-stock="1"
+         data-rating="5.0"
+         data-badge="hit">
+  <a class="product-card__media" href="product-dog-food-friend.html" aria-label="Открыть товар «Сухой корм для собак «Верный друг»»">
+    <img src="images/dog-food.jpg" alt="Сухой корм для собак «Верный друг»" loading="lazy" width="640" height="480">
+    <div class="product-card__badges"><span class="badge-soft badge-soft--hit">Хит продаж</span><span class="badge-soft badge-soft--sale">−9%</span></div>
+
+  </a>
+  <div class="product-card__body">
+    <div class="product-card__meta"><span>Собаки</span><span>Корма</span></div>
+    <h3 class="product-card__title"><a href="product-dog-food-friend.html">Сухой корм для собак «Верный друг»</a></h3>
+    <p class="product-card__description">Полнорационный корм с говядиной для взрослых собак средних пород. 3 кг.</p>
+    <div class="rating">
+      <span class="rating__stars" role="img" aria-label="Рейтинг 5.0 из 5">★★★★★</span>
+      <span class="rating__value">5.0</span>
+      <span>(2)</span>
+    </div>
+    <div class="product-card__footer">
+      <div class="product-card__price"><strong>3 190 ₽</strong><s>3 490 ₽</s></div>
+      <button type="button" class="product-card__add" data-add-to-cart
+              data-slug="dog-food-friend" data-name="Сухой корм для собак «Верный друг»"
+              data-price="3190" data-image="images/dog-food.jpg"
+              data-category="Собаки" data-type="Корма"
+              aria-label="Добавить «Сухой корм для собак «Верный друг»» в корзину"
+              title="Добавить в корзину">+</button>
+    </div>
+  </div>
+</article></div>
+<div class="col-12 col-sm-6 col-xl-4">
+<article class="product-card"
+         data-name="Набор игрушек для собак, 5 шт."
+         data-category="dogs"
+         data-type="toys"
+         data-price="890"
+         data-stock="1"
+         data-rating="4.5"
+         data-badge="">
+  <a class="product-card__media" href="product-dog-toys-set.html" aria-label="Открыть товар «Набор игрушек для собак, 5 шт.»">
+    <img src="images/dog-set.webp" alt="Набор игрушек для собак, 5 шт." loading="lazy" width="640" height="480">
+    <div class="product-card__badges"></div>
+
+  </a>
+  <div class="product-card__body">
+    <div class="product-card__meta"><span>Собаки</span><span>Игрушки</span></div>
+    <h3 class="product-card__title"><a href="product-dog-toys-set.html">Набор игрушек для собак, 5 шт.</a></h3>
+    <p class="product-card__description">Мяч, канат, пищалка, фрисби и косточка — на каждый день и для прогулок.</p>
+    <div class="rating">
+      <span class="rating__stars" role="img" aria-label="Рейтинг 4.5 из 5">★★★★☆</span>
+      <span class="rating__value">4.5</span>
+      <span>(2)</span>
+    </div>
+    <div class="product-card__footer">
+      <div class="product-card__price"><strong>890 ₽</strong></div>
+      <button type="button" class="product-card__add" data-add-to-cart
+              data-slug="dog-toys-set" data-name="Набор игрушек для собак, 5 шт."
+              data-price="890" data-image="images/dog-set.webp"
+              data-category="Собаки" data-type="Игрушки"
+              aria-label="Добавить «Набор игрушек для собак, 5 шт.» в корзину"
+              title="Добавить в корзину">+</button>
+    </div>
+  </div>
+</article></div>
+<div class="col-12 col-sm-6 col-xl-4">
+<article class="product-card"
+         data-name="Ортопедическая лежанка для собак"
+         data-category="dogs"
+         data-type="comfort"
+         data-price="4590"
+         data-stock="1"
+         data-rating="5.0"
+         data-badge="">
+  <a class="product-card__media" href="product-dog-bed-ortho.html" aria-label="Открыть товар «Ортопедическая лежанка для собак»">
+    <img src="images/dog-bed.jpg" alt="Ортопедическая лежанка для собак" loading="lazy" width="640" height="480">
+    <div class="product-card__badges"></div>
+
+  </a>
+  <div class="product-card__body">
+    <div class="product-card__meta"><span>Собаки</span><span>Лежанки и домики</span></div>
+    <h3 class="product-card__title"><a href="product-dog-bed-ortho.html">Ортопедическая лежанка для собак</a></h3>
+    <p class="product-card__description">Лежанка с пеной памяти и съёмным чехлом для собак средних пород.</p>
+    <div class="rating">
+      <span class="rating__stars" role="img" aria-label="Рейтинг 5.0 из 5">★★★★★</span>
+      <span class="rating__value">5.0</span>
+      <span>(2)</span>
+    </div>
+    <div class="product-card__footer">
+      <div class="product-card__price"><strong>4 590 ₽</strong></div>
+      <button type="button" class="product-card__add" data-add-to-cart
+              data-slug="dog-bed-ortho" data-name="Ортопедическая лежанка для собак"
+              data-price="4590" data-image="images/dog-bed.jpg"
+              data-category="Собаки" data-type="Лежанки и домики"
+              aria-label="Добавить «Ортопедическая лежанка для собак» в корзину"
+              title="Добавить в корзину">+</button>
+    </div>
+  </div>
+</article></div>
+<div class="col-12 col-sm-6 col-xl-4">
+<article class="product-card"
+         data-name="Зерновой корм для попугаев"
+         data-category="birds"
+         data-type="food"
+         data-price="450"
+         data-stock="1"
+         data-rating="4.5"
+         data-badge="">
+  <a class="product-card__media" href="product-bird-food-grain.html" aria-label="Открыть товар «Зерновой корм для попугаев»">
+    <img src="images/bird-food.jpg" alt="Зерновой корм для попугаев" loading="lazy" width="640" height="480">
+    <div class="product-card__badges"></div>
+
+  </a>
+  <div class="product-card__body">
+    <div class="product-card__meta"><span>Птицы</span><span>Корма</span></div>
+    <h3 class="product-card__title"><a href="product-bird-food-grain.html">Зерновой корм для попугаев</a></h3>
+    <p class="product-card__description">Смесь проса, овса и семян для волнистых и средних попугаев. 1 кг.</p>
+    <div class="rating">
+      <span class="rating__stars" role="img" aria-label="Рейтинг 4.5 из 5">★★★★☆</span>
+      <span class="rating__value">4.5</span>
+      <span>(2)</span>
+    </div>
+    <div class="product-card__footer">
+      <div class="product-card__price"><strong>450 ₽</strong></div>
+      <button type="button" class="product-card__add" data-add-to-cart
+              data-slug="bird-food-grain" data-name="Зерновой корм для попугаев"
+              data-price="450" data-image="images/bird-food.jpg"
+              data-category="Птицы" data-type="Корма"
+              aria-label="Добавить «Зерновой корм для попугаев» в корзину"
+              title="Добавить в корзину">+</button>
+    </div>
+  </div>
+</article></div>
+<div class="col-12 col-sm-6 col-xl-4">
+<article class="product-card"
+         data-name="Клетка для попугаев «Комфорт»"
+         data-category="birds"
+         data-type="cages"
+         data-price="5900"
+         data-stock="1"
+         data-rating="4.5"
+         data-badge="new">
+  <a class="product-card__media" href="product-bird-cage-comfort.html" aria-label="Открыть товар «Клетка для попугаев «Комфорт»»">
+    <img src="images/bird-house.jpg" alt="Клетка для попугаев «Комфорт»" loading="lazy" width="640" height="480">
+    <div class="product-card__badges"><span class="badge-soft badge-soft--new">Новинка</span></div>
+
+  </a>
+  <div class="product-card__body">
+    <div class="product-card__meta"><span>Птицы</span><span>Клетки и аквариумы</span></div>
+    <h3 class="product-card__title"><a href="product-bird-cage-comfort.html">Клетка для попугаев «Комфорт»</a></h3>
+    <p class="product-card__description">Просторная клетка с жёрдочками, кормушками и выдвижным поддоном.</p>
+    <div class="rating">
+      <span class="rating__stars" role="img" aria-label="Рейтинг 4.5 из 5">★★★★☆</span>
+      <span class="rating__value">4.5</span>
+      <span>(2)</span>
+    </div>
+    <div class="product-card__footer">
+      <div class="product-card__price"><strong>5 900 ₽</strong></div>
+      <button type="button" class="product-card__add" data-add-to-cart
+              data-slug="bird-cage-comfort" data-name="Клетка для попугаев «Комфорт»"
+              data-price="5900" data-image="images/bird-house.jpg"
+              data-category="Птицы" data-type="Клетки и аквариумы"
+              aria-label="Добавить «Клетка для попугаев «Комфорт»» в корзину"
+              title="Добавить в корзину">+</button>
+    </div>
+  </div>
+</article></div>
+<div class="col-12 col-sm-6 col-xl-4">
+<article class="product-card"
+         data-name="Корм-хлопья для аквариумных рыб"
+         data-category="fish"
+         data-type="food"
+         data-price="320"
+         data-stock="1"
+         data-rating="4.5"
+         data-badge="">
+  <a class="product-card__media" href="product-fish-food-flakes.html" aria-label="Открыть товар «Корм-хлопья для аквариумных рыб»">
+    <img src="images/fish-food.jpg" alt="Корм-хлопья для аквариумных рыб" loading="lazy" width="640" height="480">
+    <div class="product-card__badges"></div>
+
+  </a>
+  <div class="product-card__body">
+    <div class="product-card__meta"><span>Рыбы</span><span>Корма</span></div>
+    <h3 class="product-card__title"><a href="product-fish-food-flakes.html">Корм-хлопья для аквариумных рыб</a></h3>
+    <p class="product-card__description">Универсальные хлопья для тропических и холодноводных рыб. 100 г.</p>
+    <div class="rating">
+      <span class="rating__stars" role="img" aria-label="Рейтинг 4.5 из 5">★★★★☆</span>
+      <span class="rating__value">4.5</span>
+      <span>(2)</span>
+    </div>
+    <div class="product-card__footer">
+      <div class="product-card__price"><strong>320 ₽</strong></div>
+      <button type="button" class="product-card__add" data-add-to-cart
+              data-slug="fish-food-flakes" data-name="Корм-хлопья для аквариумных рыб"
+              data-price="320" data-image="images/fish-food.jpg"
+              data-category="Рыбы" data-type="Корма"
+              aria-label="Добавить «Корм-хлопья для аквариумных рыб» в корзину"
+              title="Добавить в корзину">+</button>
+    </div>
+  </div>
+</article></div>
+<div class="col-12 col-sm-6 col-xl-4">
+<article class="product-card"
+         data-name="Аквариум 60 л с LED-подсветкой"
+         data-category="fish"
+         data-type="cages"
+         data-price="7900"
+         data-stock="1"
+         data-rating="5.0"
+         data-badge="sale">
+  <a class="product-card__media" href="product-fish-aquarium-60.html" aria-label="Открыть товар «Аквариум 60 л с LED-подсветкой»">
+    <img src="images/fish-aquarium.webp" alt="Аквариум 60 л с LED-подсветкой" loading="lazy" width="640" height="480">
+    <div class="product-card__badges"><span class="badge-soft badge-soft--sale">Скидка</span></div>
+
+  </a>
+  <div class="product-card__body">
+    <div class="product-card__meta"><span>Рыбы</span><span>Клетки и аквариумы</span></div>
+    <h3 class="product-card__title"><a href="product-fish-aquarium-60.html">Аквариум 60 л с LED-подсветкой</a></h3>
+    <p class="product-card__description">Комплект для начинающих: аквариум, крышка, фильтр и подсветка.</p>
+    <div class="rating">
+      <span class="rating__stars" role="img" aria-label="Рейтинг 5.0 из 5">★★★★★</span>
+      <span class="rating__value">5.0</span>
+      <span>(2)</span>
+    </div>
+    <div class="product-card__footer">
+      <div class="product-card__price"><strong>7 900 ₽</strong><s>8 900 ₽</s></div>
+      <button type="button" class="product-card__add" data-add-to-cart
+              data-slug="fish-aquarium-60" data-name="Аквариум 60 л с LED-подсветкой"
+              data-price="7900" data-image="images/fish-food.jpg"
+              data-category="Рыбы" data-type="Клетки и аквариумы"
+              aria-label="Добавить «Аквариум 60 л с LED-подсветкой» в корзину"
+              title="Добавить в корзину">+</button>
+    </div>
+  </div>
+</article></div>
+<div class="col-12 col-sm-6 col-xl-4">
+<article class="product-card"
+         data-name="Корм для хомяков и мышей"
+         data-category="rodents"
+         data-type="food"
+         data-price="380"
+         data-stock="1"
+         data-rating="4.5"
+         data-badge="">
+  <a class="product-card__media" href="product-rodent-food-grain.html" aria-label="Открыть товар «Корм для хомяков и мышей»">
+    <img src="images/mouse-food.jpeg" alt="Корм для хомяков и мышей" loading="lazy" width="640" height="480">
+    <div class="product-card__badges"></div>
+
+  </a>
+  <div class="product-card__body">
+    <div class="product-card__meta"><span>Грызуны</span><span>Корма</span></div>
+    <h3 class="product-card__title"><a href="product-rodent-food-grain.html">Корм для хомяков и мышей</a></h3>
+    <p class="product-card__description">Зерновая смесь с орехами и сушёными овощами для грызунов. 800 г.</p>
+    <div class="rating">
+      <span class="rating__stars" role="img" aria-label="Рейтинг 4.5 из 5">★★★★☆</span>
+      <span class="rating__value">4.5</span>
+      <span>(2)</span>
+    </div>
+    <div class="product-card__footer">
+      <div class="product-card__price"><strong>380 ₽</strong></div>
+      <button type="button" class="product-card__add" data-add-to-cart
+              data-slug="rodent-food-grain" data-name="Корм для хомяков и мышей"
+              data-price="380" data-image="images/mouse-food.jpeg"
+              data-category="Грызуны" data-type="Корма"
+              aria-label="Добавить «Корм для хомяков и мышей» в корзину"
+              title="Добавить в корзину">+</button>
+    </div>
+  </div>
+</article></div>
+<div class="col-12 col-sm-6 col-xl-4">
+<article class="product-card product-card--out"
+         data-name="Бесшумное беговое колесо"
+         data-category="rodents"
+         data-type="toys"
+         data-price="690"
+         data-stock="0"
+         data-rating="5.0"
+         data-badge="">
+  <a class="product-card__media" href="product-rodent-wheel.html" aria-label="Открыть товар «Бесшумное беговое колесо»">
+    <img src="images/mouse-wheel.jpg" alt="Бесшумное беговое колесо" loading="lazy" width="640" height="480">
+    <div class="product-card__badges"></div>
+    <span class="product-card__out">Нет в наличии</span>
+  </a>
+  <div class="product-card__body">
+    <div class="product-card__meta"><span>Грызуны</span><span>Игрушки</span></div>
+    <h3 class="product-card__title"><a href="product-rodent-wheel.html">Бесшумное беговое колесо</a></h3>
+    <p class="product-card__description">Колесо с подшипником и закрытой осью — тихо даже ночью. 20 см.</p>
+    <div class="rating">
+      <span class="rating__stars" role="img" aria-label="Рейтинг 5.0 из 5">★★★★★</span>
+      <span class="rating__value">5.0</span>
+      <span>(2)</span>
+    </div>
+    <div class="product-card__footer">
+      <div class="product-card__price"><strong>690 ₽</strong></div>
+      <button type="button" class="product-card__add" data-add-to-cart
+              data-slug="rodent-wheel" data-name="Бесшумное беговое колесо"
+              data-price="690" data-image="images/mouse-wheel.jpg"
+              data-category="Грызуны" data-type="Игрушки"
+              aria-label="Добавить «Бесшумное беговое колесо» в корзину"
+              title="Добавить в корзину" disabled>×</button>
+    </div>
+  </div>
+</article></div></div>
+
+      <div class="no-results d-none" id="no-results">
+        <span class="no-results__icon" aria-hidden="true">🔍</span>
+        <h2 class="h5">Ничего не нашлось</h2>
+        <p class="text-muted small mb-3">Попробуйте изменить фильтры или сбросить их — в каталоге точно есть что-то для вашего питомца.</p>
+        <button type="button" class="btn btn-primary" id="no-results-reset">Сбросить фильтры</button>
+      </div>
+
+      <section class="recent-section d-none" id="recently-viewed" aria-labelledby="recent-title">
+        <div class="section-heading">
+          <div>
+            <span class="section-eyebrow">Вы уже смотрели</span>
+            <h2 class="section-title" id="recent-title">Недавно просмотренные</h2>
+          </div>
+          <button type="button" class="btn btn-sm btn-outline-secondary" id="recent-clear">Очистить</button>
+        </div>
+        <div class="row g-3" id="recent-grid"></div>
+      </section>
+    </div>
+  </div>
+</div>
+
   </main>
 
-  <footer>
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
-  </footer>
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-lg-4">
+        <a href="index.html" class="footer-brand">
+          <svg class="footer-brand__paw" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" focusable="false"><path d="M16 28c-4 0-8-2-8-6 0-2 2-4 4-4 1 0 2 1 3 1s2-1 3-1c2 0 4 2 4 4 0 4-4 6-8 6zM8 14c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3zm16 0c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3zm-8-4c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3z"/></svg> Лапки и Хвосты
+        </a>
+        <p>Зоомагазин для тех, кто заботится о питомцах. Корма, игрушки, лежанки и аксессуары — с любовью к каждому хвосту.</p>
+        <div class="footer-social" aria-label="Социальные сети">
+          <a href="#" aria-label="ВКонтакте" onclick="return false;">ВК</a>
+          <a href="#" aria-label="Telegram" onclick="return false;">TG</a>
+          <a href="#" aria-label="YouTube" onclick="return false;">YT</a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h2>Каталог</h2>
+        <ul class="footer-links">
+          <li><a href="catalog.html?category=cats">🐱 Кошки</a></li>
+<li><a href="catalog.html?category=dogs">🐶 Собаки</a></li>
+<li><a href="catalog.html?category=rodents">🐹 Грызуны</a></li>
+<li><a href="catalog.html?category=birds">🦜 Птицы</a></li>
+<li><a href="catalog.html?category=fish">🐠 Рыбы</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-3">
+        <h2>Покупателям</h2>
+        <ul class="footer-links">
+          <li><a href="catalog.html">Все товары</a></li>
+          <li><a href="cart.html">Корзина и доставка</a></li>
+          <li><a href="order.html">Оформление заказа</a></li>
+          <li><a href="index.html#faq">Частые вопросы</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-lg-3">
+        <h2>Контакты</h2>
+        <ul class="footer-contact">
+          <li><span class="footer-contact__icon">📍</span><span>г. Москва, ул. Кошачья, д. 12</span></li>
+          <li><span class="footer-contact__icon">📞</span><a href="tel:+79993467891">+7 (999) 346-78-91</a></li>
+          <li><span class="footer-contact__icon">🕒</span><span>Пн–Пт 10:00–20:00, Сб–Вс 10:00–18:00</span></li>
+          <li><span class="footer-contact__icon">📧</span><a href="mailto:hello@lapki-hvosty.ru">hello@lapki-hvosty.ru</a></li>
+        </ul>
+      </div>
+    </div>
 
-  <a href="#top" class="scroll-top" id="scroll-top" aria-label="Наверх">↑</a>
+    <div class="footer-bottom">
+      <span>© 2026 «Лапки и Хвосты». Учебный проект.</span>
+    </div>
+  </div>
+</footer>
 
+  <button type="button" class="scroll-top" id="scroll-top" aria-label="Наверх" title="Наверх">
+    <svg class="scroll-top__icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" focusable="false"><path d="M16 28c-4 0-8-2-8-6 0-2 2-4 4-4 1 0 2 1 3 1s2-1 3-1c2 0 4 2 4 4 0 4-4 6-8 6zM8 14c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3zm16 0c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3zm-8-4c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3z"/></svg>
+  </button>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js?v=4"></script>
+  <script src="js/cart.js?v=4"></script>
+  <script src="js/recent.js?v=4"></script>
 </body>
-
 </html>

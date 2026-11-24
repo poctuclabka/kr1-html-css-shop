@@ -1,255 +1,526 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Учебный интернет-магазин</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
+  <meta name="description" content="Зоомагазин «Лапки и Хвосты» — корма, игрушки, лежанки и аксессуары для кошек, собак, грызунов, птиц и рыб.">
+  <meta name="theme-color" content="#fcfaf7">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Учебный интернет-магазин">
-  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
-  <meta property="og:image" content="https://tobleron333.github.io/kr1-html-css-shop/images/preview.jpg">
-
+  <meta property="og:title" content="Главная — Лапки и Хвосты">
+  <meta property="og:description" content="Зоомагазин «Лапки и Хвосты» — корма, игрушки, лежанки и аксессуары для кошек, собак, грызунов, птиц и рыб.">
+  <meta property="og:image" content="https://poctuclabka.github.io/kr1-html-css-shop/images/cat-hero.jpg">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Главная — Лапки и Хвосты</title>
+  <script src="js/theme.js?v=4"></script>
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css?v=4">
 </head>
-
-<body>
+<body class="d-flex flex-column min-vh-100" >
+  <a class="visually-hidden-focusable" href="#main-content">Перейти к содержимому</a>
 
 <header class="site-header">
-  <div class="site-header__inner">
-    <a class="site-header__logo" href="index.html">ShopProject</a>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container align-items-center">
+      <a class="navbar-brand" href="index.html">
+        <span class="navbar-brand__paw"><svg class="paw-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" focusable="false"><path d="M16 28c-4 0-8-2-8-6 0-2 2-4 4-4 1 0 2 1 3 1s2-1 3-1c2 0 4 2 4 4 0 4-4 6-8 6zM8 14c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3zm16 0c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3zm-8-4c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3z"/></svg></span>
+        <span>Лапки и Хвосты<span class="navbar-brand__sub">зоомагазин</span></span>
+      </a>
 
-    <nav class="site-nav" aria-label="Основная навигация">
-      <ul class="site-nav__list">
-        <li class="site-nav__item">
-          <a class="site-nav__link site-nav__link--active" href="index.html">Главная</a>
-        </li>
-        <li class="site-nav__item">
-          <a class="site-nav__link" href="catalog.html">Каталог</a>
-        </li>
-        <li class="site-nav__item">
-          <a class="site-nav__link" href="product.html">Карточка товара</a>
-        </li>
-        <li class="site-nav__item">
-          <a class="site-nav__link" href="order.html">Заявка</a>
-        </li>
-        <li class="site-nav__item">
-          <a class="site-nav__link" href="contacts.html">Контакты</a>
-        </li>
-        <li class="site-nav__item">
-          <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
+      <div class="header-controls ms-auto order-lg-3">
+        <a class="cart-link cart-link--compact d-lg-none" href="cart.html" aria-label="Корзина">
+          <span class="cart-link__icon" aria-hidden="true">🛒</span>
+          <span class="cart-link__count js-cart-count" hidden>0</span>
+        </a>
+        <div class="d-none d-lg-flex align-items-center gap-2">
+          <a class="cart-link" href="cart.html">
+            <span class="cart-link__icon" aria-hidden="true">🛒</span>
+            <span class="cart-link__text">Корзина</span>
+            <span class="cart-link__count js-cart-count" hidden>0</span>
+          </a>
+          <button type="button" class="theme-toggle js-theme-toggle" aria-label="Переключить тему" aria-pressed="false">🌙</button>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Переключить навигацию">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse order-lg-2" id="main-nav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+        </ul>
+        <div class="d-flex d-lg-none align-items-center gap-2 pt-3 mt-2">
+          <button type="button" class="theme-toggle js-theme-toggle" aria-label="Переключить тему" aria-pressed="false">🌙</button>
+          <span class="text-white-50 small">Светлая / тёмная тема</span>
+        </div>
+      </div>
+    </div>
+  </nav>
 </header>
 
-<main>
-  <!-- Основное содержимое страницы -->
+  <main class="flex-grow-1" id="main-content">
 
-   <section class="hero">
-  <h1>Учебный интернет-магазин</h1>
-  <p>
-    Это стартовая страница учебного frontend-проекта.
-    В дальнейшем на её основе будет разработан многостраничный сайт
-    интернет-магазина или каталога услуг.
-  </p>
-  <a class="button button--primary" href="#popular">Перейти к товарам</a>
-</section>
+<div class="container">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="row align-items-center g-4 g-lg-5">
+      <div class="col-lg-6">
+        <span class="hero__eyebrow">🐾 Зоомагазин с заботой</span>
+        <h1 class="hero__title" id="hero-title">Всё для питомца — от корма до <em>уютной лежанки</em></h1>
+        <p class="hero__text">Подбираем питание, игрушки и аксессуары для кошек, собак, грызунов, птиц и рыб. Поможем выбрать и привезём в день заказа.</p>
+        <div class="hero__actions">
+          <a class="btn btn-primary btn-lg" href="catalog.html">Перейти в каталог</a>
+          <a class="btn btn-outline-primary btn-lg" href="#charity">Помочь приюту</a>
+        </div>
+        <div class="hero__stats">
+          <div class="hero__stat"><strong>1 200+</strong><span>товаров в наличии</span></div>
+          <div class="hero__stat"><strong>4.9 / 5</strong><span>средняя оценка</span></div>
+          <div class="hero__stat"><strong>2 часа</strong><span>доставка по Москве</span></div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero__media">
+          <img class="hero__image" src="images/cat-hero.jpg" alt="Питомцы зоомагазина «Лапки и Хвосты»" width="900" height="700">
+          <div class="hero__float">
+            <span class="hero__float-icon" aria-hidden="true">🚚</span>
+            <span>Бесплатная доставка<small>при заказе от 3 000 ₽</small></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 
-<section class="section" id="advantages">
-  <h2>Преимущества проекта</h2>
+<div class="container">
+  <div class="section section--tight">
+    <div class="row g-3 g-lg-4">
+<div class="col-sm-6 col-lg-3">
+  <article class="feature-card">
+    <span class="feature-card__icon" aria-hidden="true">🚚</span>
+    <h3>Быстрая доставка</h3>
+    <p>Отправляем заказы в день оформления. По Москве — курьером за 1–2 часа.</p>
+  </article>
+</div>
 
-  <ul class="advantages__list">
-    <li>понятная HTML-структура;</li>
-    <li>семантические блоки страницы;</li>
-    <li>подключение внешнего CSS-файла;</li>
-    <li>подготовка к разработке многостраничного сайта.</li>
-  </ul>
-</section>
+<div class="col-sm-6 col-lg-3">
+  <article class="feature-card">
+    <span class="feature-card__icon" aria-hidden="true">🌱</span>
+    <h3>Проверенные бренды</h3>
+    <p>Работаем только с производителями, которые подтвердили качество и состав.</p>
+  </article>
+</div>
 
-<section class="section" id="popular">
-  <h2>Популярные товары</h2>
+<div class="col-sm-6 col-lg-3">
+  <article class="feature-card">
+    <span class="feature-card__icon" aria-hidden="true">💬</span>
+    <h3>Помощь в выборе</h3>
+    <p>Подскажем, чем кормить питомца и что учесть при выборе аксессуаров.</p>
+  </article>
+</div>
 
-  <div class="products-grid">
-
-    <article class="product-card">
-      <h3 class="product-card__title">Товар 1</h3>
-      <p class="product-card__description">Краткое описание учебного товара.</p>
-      <p class="product-card__price">Цена: 1000 руб.</p>
-      <button class="button button--primary product-card__button" type="button" data-product="Товар 1">
-        Заказать
-      </button>
-    </article>
-
-    <article class="product-card">
-      <h3 class="product-card__title">Товар 2</h3>
-      <p class="product-card__description">Краткое описание учебного товара.</p>
-      <p class="product-card__price">Цена: 1500 руб.</p>
-      <button class="button button--primary product-card__button" type="button" data-product="Товар 2">
-        Заказать
-      </button>
-    </article>
-
-    <article class="product-card">
-      <h3 class="product-card__title">Товар 3</h3>
-      <p class="product-card__description">Краткое описание учебного товара.</p>
-      <p class="product-card__price">Цена: 2000 руб.</p>
-      <button class="button button--primary product-card__button" type="button" data-product="Товар 3">
-        Заказать
-      </button>
-    </article>
-
+<div class="col-sm-6 col-lg-3">
+  <article class="feature-card">
+    <span class="feature-card__icon" aria-hidden="true">🤝</span>
+    <h3>Поддержка приютов</h3>
+    <p>Передаём часть выручки и корма животным, которые ищут новый дом.</p>
+  </article>
+</div></div>
   </div>
-</section>
+</div>
 
-<section class="section faq" id="faq">
-  <h2>Частые вопросы</h2>
+<div class="container">
+  <section class="section" id="popular" aria-label="Популярные товары">
+    <div class="section-heading">
+      <div class="section-heading__text">
+        <span class="section-eyebrow">Выбор покупателей</span>
+        <h2 class="section-title">Популярные товары</h2>
+        <p class="section-subtitle">То, что чаще всего берут для кошек и собак. Все товары есть в наличии.</p>
+      </div>
+      <div class="section-heading__action"><a class="btn btn-outline-primary" href="catalog.html">Смотреть все</a></div>
+    </div>
+    <div class="row g-4"><div class="col-12 col-sm-6 col-lg-3">
+<article class="product-card"
+         data-name="Сухой корм для кошек «Мурлыка»"
+         data-category="cats"
+         data-type="food"
+         data-price="1290"
+         data-stock="1"
+         data-rating="5.0"
+         data-badge="hit">
+  <a class="product-card__media" href="product-cat-food-murlyka.html" aria-label="Открыть товар «Сухой корм для кошек «Мурлыка»»">
+    <img src="images/cat-food.jpg" alt="Сухой корм для кошек «Мурлыка»" loading="lazy" width="640" height="480">
+    <div class="product-card__badges"><span class="badge-soft badge-soft--hit">Хит продаж</span><span class="badge-soft badge-soft--sale">−13%</span></div>
 
-  <details class="faq__item">
-    <summary class="faq__question">Как оформить заказ?</summary>
-    <p class="faq__answer">
-      Нажмите кнопку «Заказать» на карточке товара или перейдите на страницу «Заявка» и заполните форму. Мы свяжемся с вами для подтверждения.
-    </p>
-  </details>
+  </a>
+  <div class="product-card__body">
+    <div class="product-card__meta"><span>Кошки</span><span>Корма</span></div>
+    <h3 class="product-card__title"><a href="product-cat-food-murlyka.html">Сухой корм для кошек «Мурлыка»</a></h3>
+    <p class="product-card__description">Полнорационный корм с индейкой и рисом для взрослых кошек. 2 кг.</p>
+    <div class="rating">
+      <span class="rating__stars" role="img" aria-label="Рейтинг 5.0 из 5">★★★★★</span>
+      <span class="rating__value">5.0</span>
+      <span>(2)</span>
+    </div>
+    <div class="product-card__footer">
+      <div class="product-card__price"><strong>1 290 ₽</strong><s>1 490 ₽</s></div>
+      <button type="button" class="product-card__add" data-add-to-cart
+              data-slug="cat-food-murlyka" data-name="Сухой корм для кошек «Мурлыка»"
+              data-price="1290" data-image="images/cat-food.jpg"
+              data-category="Кошки" data-type="Корма"
+              aria-label="Добавить «Сухой корм для кошек «Мурлыка»» в корзину"
+              title="Добавить в корзину">+</button>
+    </div>
+  </div>
+</article></div>
+<div class="col-12 col-sm-6 col-lg-3">
+<article class="product-card"
+         data-name="Сухой корм для собак «Верный друг»"
+         data-category="dogs"
+         data-type="food"
+         data-price="3190"
+         data-stock="1"
+         data-rating="5.0"
+         data-badge="hit">
+  <a class="product-card__media" href="product-dog-food-friend.html" aria-label="Открыть товар «Сухой корм для собак «Верный друг»»">
+    <img src="images/dog-food.jpg" alt="Сухой корм для собак «Верный друг»" loading="lazy" width="640" height="480">
+    <div class="product-card__badges"><span class="badge-soft badge-soft--hit">Хит продаж</span><span class="badge-soft badge-soft--sale">−9%</span></div>
 
-  <details class="faq__item">
-    <summary class="faq__question">Сколько стоит доставка?</summary>
-    <p class="faq__answer">
-      Доставка по городу - бесплатно при заказе от 3000 рублей. В другие регионы - по тарифам транспортных компаний.
-    </p>
-  </details>
+  </a>
+  <div class="product-card__body">
+    <div class="product-card__meta"><span>Собаки</span><span>Корма</span></div>
+    <h3 class="product-card__title"><a href="product-dog-food-friend.html">Сухой корм для собак «Верный друг»</a></h3>
+    <p class="product-card__description">Полнорационный корм с говядиной для взрослых собак средних пород. 3 кг.</p>
+    <div class="rating">
+      <span class="rating__stars" role="img" aria-label="Рейтинг 5.0 из 5">★★★★★</span>
+      <span class="rating__value">5.0</span>
+      <span>(2)</span>
+    </div>
+    <div class="product-card__footer">
+      <div class="product-card__price"><strong>3 190 ₽</strong><s>3 490 ₽</s></div>
+      <button type="button" class="product-card__add" data-add-to-cart
+              data-slug="dog-food-friend" data-name="Сухой корм для собак «Верный друг»"
+              data-price="3190" data-image="images/dog-food.jpg"
+              data-category="Собаки" data-type="Корма"
+              aria-label="Добавить «Сухой корм для собак «Верный друг»» в корзину"
+              title="Добавить в корзину">+</button>
+    </div>
+  </div>
+</article></div>
+<div class="col-12 col-sm-6 col-lg-3">
+<article class="product-card"
+         data-name="Ортопедическая лежанка для собак"
+         data-category="dogs"
+         data-type="comfort"
+         data-price="4590"
+         data-stock="1"
+         data-rating="5.0"
+         data-badge="">
+  <a class="product-card__media" href="product-dog-bed-ortho.html" aria-label="Открыть товар «Ортопедическая лежанка для собак»">
+    <img src="images/dog-bed.jpg" alt="Ортопедическая лежанка для собак" loading="lazy" width="640" height="480">
+    <div class="product-card__badges"></div>
 
-  <details class="faq__item">
-    <summary class="faq__question">Как с вами связаться?</summary>
-    <p class="faq__answer">
-      Позвоните по телефону +7 (900) 000-00-00, напишите на
-      info@example.com или оставьте заявку через форму на сайте.
-    </p>
-  </details>
-</section>
+  </a>
+  <div class="product-card__body">
+    <div class="product-card__meta"><span>Собаки</span><span>Лежанки и домики</span></div>
+    <h3 class="product-card__title"><a href="product-dog-bed-ortho.html">Ортопедическая лежанка для собак</a></h3>
+    <p class="product-card__description">Лежанка с пеной памяти и съёмным чехлом для собак средних пород.</p>
+    <div class="rating">
+      <span class="rating__stars" role="img" aria-label="Рейтинг 5.0 из 5">★★★★★</span>
+      <span class="rating__value">5.0</span>
+      <span>(2)</span>
+    </div>
+    <div class="product-card__footer">
+      <div class="product-card__price"><strong>4 590 ₽</strong></div>
+      <button type="button" class="product-card__add" data-add-to-cart
+              data-slug="dog-bed-ortho" data-name="Ортопедическая лежанка для собак"
+              data-price="4590" data-image="images/dog-bed.jpg"
+              data-category="Собаки" data-type="Лежанки и домики"
+              aria-label="Добавить «Ортопедическая лежанка для собак» в корзину"
+              title="Добавить в корзину">+</button>
+    </div>
+  </div>
+</article></div>
+<div class="col-12 col-sm-6 col-lg-3">
+<article class="product-card"
+         data-name="Аквариум 60 л с LED-подсветкой"
+         data-category="fish"
+         data-type="cages"
+         data-price="7900"
+         data-stock="1"
+         data-rating="5.0"
+         data-badge="sale">
+  <a class="product-card__media" href="product-fish-aquarium-60.html" aria-label="Открыть товар «Аквариум 60 л с LED-подсветкой»">
+    <img src="images/fish-aquarium.webp" alt="Аквариум 60 л с LED-подсветкой" loading="lazy" width="640" height="480">
+    <div class="product-card__badges"><span class="badge-soft badge-soft--sale">Скидка</span></div>
 
-<aside class="info-block">
-  <h2>Информация для студентов</h2>
-  <p>
-    На следующих практических занятиях этот проект будет расширяться:
-    появятся формы, модальное окно, дополнительные страницы, Flex/Grid,
-    БЭМ-структура и адаптивная версия сайта.
-  </p>
-</aside>
-</main>
+  </a>
+  <div class="product-card__body">
+    <div class="product-card__meta"><span>Рыбы</span><span>Клетки и аквариумы</span></div>
+    <h3 class="product-card__title"><a href="product-fish-aquarium-60.html">Аквариум 60 л с LED-подсветкой</a></h3>
+    <p class="product-card__description">Комплект для начинающих: аквариум, крышка, фильтр и подсветка.</p>
+    <div class="rating">
+      <span class="rating__stars" role="img" aria-label="Рейтинг 5.0 из 5">★★★★★</span>
+      <span class="rating__value">5.0</span>
+      <span>(2)</span>
+    </div>
+    <div class="product-card__footer">
+      <div class="product-card__price"><strong>7 900 ₽</strong><s>8 900 ₽</s></div>
+      <button type="button" class="product-card__add" data-add-to-cart
+              data-slug="fish-aquarium-60" data-name="Аквариум 60 л с LED-подсветкой"
+              data-price="7900" data-image="images/fish-aquarium.webp"
+              data-category="Рыбы" data-type="Клетки и аквариумы"
+              aria-label="Добавить «Аквариум 60 л с LED-подсветкой» в корзину"
+              title="Добавить в корзину">+</button>
+    </div>
+  </div>
+</article></div></div>
+  </section>
+</div>
 
-<footer id="contacts">
-  <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-  <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+<div class="container">
+  <section class="section" id="stories" aria-label="Истории и подборки">
+    <div id="storyCarousel" class="carousel slide story-carousel" data-bs-ride="carousel">
+      <div class="carousel-indicators"><button type="button" data-bs-target="#storyCarousel" data-bs-slide-to="0" class="active" aria-label="Слайд 1"></button><button type="button" data-bs-target="#storyCarousel" data-bs-slide-to="1" class="" aria-label="Слайд 2"></button><button type="button" data-bs-target="#storyCarousel" data-bs-slide-to="2" class="" aria-label="Слайд 3"></button></div>
+      <div class="carousel-inner">
+<div class="carousel-item active">
+  <div class="story-slide" style="background-image: url('images/cat.jpeg');">
+    <div class="story-slide__content">
+      <span class="story-slide__eyebrow">Кошки</span>
+      <h3>Новинки для усатых хозяев дома</h3>
+      <p>Лежанки-облака, дразнилки и корма с индейкой — всё, чтобы кот чувствовал себя королём квартиры.</p>
+      <a class="btn" href="catalog.html?category=cats">Выбрать для кошки</a>
+    </div>
+  </div>
+</div>
+<div class="carousel-item">
+  <div class="story-slide" style="background-image: url('images/dog.jpg');">
+    <div class="story-slide__content">
+      <span class="story-slide__eyebrow">Собаки</span>
+      <h3>Больше прогулок, меньше скуки</h3>
+      <p>Наборы игрушек, ортопедические лежанки и корма для активных собак средних пород.</p>
+      <a class="btn" href="catalog.html?category=dogs">Выбрать для собаки</a>
+    </div>
+  </div>
+</div>
+<div class="carousel-item">
+  <div class="story-slide" style="background-image: url('images/birds.jpg');">
+    <div class="story-slide__content">
+      <span class="story-slide__eyebrow">Птицы и грызуны</span>
+      <h3>Маленькие питомцы — большая забота</h3>
+      <p>Зерновые смеси, клетки с жёрдочками и бесшумные колёса для тех, кто никогда не сидит на месте.</p>
+      <a class="btn" href="catalog.html?category=birds">Смотреть товары</a>
+    </div>
+  </div>
+</div></div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#storyCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Назад</span></button>
+      <button class="carousel-control-next" type="button" data-bs-target="#storyCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Вперёд</span></button>
+    </div>
+  </section>
+</div>
+
+<div class="container">
+  <section class="section" id="charity" aria-labelledby="charity-title">
+    <div class="charity-card" data-charity>
+      <span class="charity-card__emoji" aria-hidden="true">🐶</span>
+      <div class="charity-card__content">
+        <span class="section-eyebrow">Добрые дела</span>
+        <h2 class="section-title" id="charity-title">Собираем корм для приюта «Добрые лапы»</h2>
+        <p class="section-subtitle mb-3">Часть выручки идёт на закупку корма для животных, которые ищут дом. Помогите собрать 40 000 ₽ — этого хватит на месяц питания.</p>
+        <div class="charity-stats">
+          <span>Собрано <strong data-charity-raised>23 500 ₽</strong> из 40 000 ₽</span>
+          <span data-charity-percent>59%</span>
+        </div>
+        <div class="progress charity-progress" data-charity-progress role="progressbar" aria-valuenow="59" aria-valuemin="0" aria-valuemax="100" aria-label="Прогресс сбора корма для приюта">
+          <div class="progress-bar" data-charity-bar style="width: 59%"></div>
+        </div>
+        <form class="charity-donation-form" id="charity-form">
+          <button type="button" class="btn btn-sm btn-outline-secondary" data-charity-amount="300">300 ₽</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary" data-charity-amount="500">500 ₽</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary" data-charity-amount="1000">1 000 ₽</button>
+          <label class="visually-hidden" for="charity-amount">Сумма помощи в рублях</label>
+          <input id="charity-amount" class="form-control" type="number" min="100" step="50" placeholder="Своя сумма" value="500">
+          <button type="submit" class="btn btn-primary">Поддержать</button>
+        </form>
+        <p class="charity-note">Сбор ведётся вместе с приютом «Добрые лапы». Сумма сохраняется в этом браузере — её можно увеличить в любой момент.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="container">
+  <section class="section" id="articles" aria-label="Полезные статьи">
+    <div class="section-heading">
+      <div class="section-heading__text">
+        <span class="section-eyebrow">Полезное</span>
+        <h2 class="section-title">Советы для заботливых хозяев</h2>
+        <p class="section-subtitle">Короткие статьи, которые помогают выбрать корм, подготовить дом к появлению питомца и ухаживать за ним без лишнего стресса.</p>
+      </div>
+    </div>
+    <div class="row g-4"><div class="col-12 col-md-6 col-lg-4">
+<a class="article-card" href="story-kak-vybrat-korm.html">
+  <div class="article-card__media">
+    <img src="images/cat-eats.jpg" alt="Как выбрать корм для кошки: 5 простых правил">
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__date">Кошки · 12 ноября 2026 г.</span>
+    <h3 class="article-card__title">Как выбрать корм для кошки: 5 простых правил</h3>
+    <p class="article-card__text">Разбираем состав, класс корма и возраст питомца — без сложных терминов и маркетинговых обещаний.</p>
+    <span class="article-card__more">Читать статью →</span>
+  </div>
+</a></div>
+<div class="col-12 col-md-6 col-lg-4">
+<a class="article-card" href="story-pervyy-den-sobaki.html">
+  <div class="article-card__media">
+    <img src="images/doggy.jpg" alt="Первый день собаки дома: чек-лист">
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__date">Собаки · 5 ноября 2026 г.</span>
+    <h3 class="article-card__title">Первый день собаки дома: чек-лист</h3>
+    <p class="article-card__text">Что подготовить заранее, как познакомить питомца с квартирой и почему первые сутки лучше не устраивать шумных праздников.</p>
+    <span class="article-card__more">Читать статью →</span>
+  </div>
+</a></div>
+<div class="col-12 col-md-6 col-lg-4">
+<a class="article-card" href="story-uhod-za-popugaem.html">
+  <div class="article-card__media">
+    <img src="images/birdathome.jpg" alt="Попугай в квартире: с чего начать">
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__date">Птицы · 28 октября 2026 г.</span>
+    <h3 class="article-card__title">Попугай в квартире: с чего начать</h3>
+    <p class="article-card__text">Клетка, свет, рацион и тишина — четыре вещи, которые определяют комфорт домашнего попугая.</p>
+    <span class="article-card__more">Читать статью →</span>
+  </div>
+</a></div></div>
+  </section>
+</div>
+
+<div class="container">
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="row g-4 g-lg-5">
+      <div class="col-lg-12">
+        <span class="section-eyebrow">Вопросы и ответы</span>
+        <h2 class="section-title mb-3" id="faq-title">Частые вопросы</h2>
+        <div class="accordion faq-accordion" id="faqAccordion">
+<div class="accordion-item">
+  <h3 class="accordion-header">
+    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-0" aria-expanded="true" aria-controls="faq-0">Как оформить заказ?</button>
+  </h3>
+  <div id="faq-0" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+    <div class="accordion-body">Добавьте товары в корзину и перейдите на страницу оформления. Заполните контактные данные, выберите доставку и оплату — после отправки заявки мы свяжемся с вами для подтверждения.</div>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <h3 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-1" aria-expanded="false" aria-controls="faq-1">Сколько стоит доставка?</button>
+  </h3>
+  <div id="faq-1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+    <div class="accordion-body">По Москве курьером — 299 ₽, при заказе от 3 000 ₽ доставка бесплатная. В Санкт-Петербург — 399 ₽, в другие города — от 499 ₽. Точную стоимость можно рассчитать в корзине.</div>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <h3 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-2" aria-expanded="false" aria-controls="faq-2">Можно ли вернуть товар?</button>
+  </h3>
+  <div id="faq-2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+    <div class="accordion-body">Да, в течение 14 дней с момента получения, если товар не использовался и сохранена упаковка. Корма и товары с нарушенной индивидуальной упаковкой возврату не подлежат.</div>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <h3 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-3" aria-expanded="false" aria-controls="faq-3">Есть ли самовывоз?</button>
+  </h3>
+  <div id="faq-3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+    <div class="accordion-body">Да, забрать заказ можно бесплатно по адресу: г. Москва, ул. Кошачья, д. 12, ежедневно с 10:00 до 20:00. Мы сообщим, когда заказ будет готов.</div>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <h3 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-4" aria-expanded="false" aria-controls="faq-4">Как можно оплатить заказ?</button>
+  </h3>
+  <div id="faq-4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+    <div class="accordion-body">Картой онлайн, наличными при получении или переводом по счёту. Для юридических лиц доступна оплата по счёту с закрывающими документами.</div>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <h3 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-5" aria-expanded="false" aria-controls="faq-5">Помогаете ли вы приютам?</button>
+  </h3>
+  <div id="faq-5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+    <div class="accordion-body">Да, мы регулярно передаём корма и товары приюту «Добрые лапы». На главной странице можно поддержать сбор корма — каждая сумма идёт на закупку питания для животных.</div>
+  </div>
+</div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+  </main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-lg-4">
+        <a href="index.html" class="footer-brand">
+          <svg class="footer-brand__paw" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" focusable="false"><path d="M16 28c-4 0-8-2-8-6 0-2 2-4 4-4 1 0 2 1 3 1s2-1 3-1c2 0 4 2 4 4 0 4-4 6-8 6zM8 14c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3zm16 0c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3zm-8-4c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3z"/></svg> Лапки и Хвосты
+        </a>
+        <p>Зоомагазин для тех, кто заботится о питомцах. Корма, игрушки, лежанки и аксессуары — с любовью к каждому хвосту.</p>
+        <div class="footer-social" aria-label="Социальные сети">
+          <a href="#" aria-label="ВКонтакте" onclick="return false;">ВК</a>
+          <a href="#" aria-label="Telegram" onclick="return false;">TG</a>
+          <a href="#" aria-label="YouTube" onclick="return false;">YT</a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h2>Каталог</h2>
+        <ul class="footer-links">
+          <li><a href="catalog.html?category=cats">🐱 Кошки</a></li>
+<li><a href="catalog.html?category=dogs">🐶 Собаки</a></li>
+<li><a href="catalog.html?category=rodents">🐹 Грызуны</a></li>
+<li><a href="catalog.html?category=birds">🦜 Птицы</a></li>
+<li><a href="catalog.html?category=fish">🐠 Рыбы</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-3">
+        <h2>Покупателям</h2>
+        <ul class="footer-links">
+          <li><a href="catalog.html">Все товары</a></li>
+          <li><a href="cart.html">Корзина и доставка</a></li>
+          <li><a href="order.html">Оформление заказа</a></li>
+          <li><a href="index.html#faq">Частые вопросы</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-lg-3">
+        <h2>Контакты</h2>
+        <ul class="footer-contact">
+          <li><span class="footer-contact__icon">📍</span><span>г. Москва, ул. Кошачья, д. 12</span></li>
+          <li><span class="footer-contact__icon">📞</span><a href="tel:+79993467891">+7 (999) 346-78-91</a></li>
+          <li><span class="footer-contact__icon">🕒</span><span>Пн–Пт 10:00–20:00, Сб–Вс 10:00–18:00</span></li>
+          <li><span class="footer-contact__icon">📧</span><a href="mailto:hello@lapki-hvosty.ru">hello@lapki-hvosty.ru</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 «Лапки и Хвосты». Учебный проект.</span>
+    </div>
+  </div>
 </footer>
 
-<dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
-  <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
-
-  <form class="order-form" id="order-form" action="#" method="post" novalidate>
-    <input id="selected-product" name="selected-product" type="hidden">
-
-    <div class="order-form__field">
-      <label class="order-form__label" for="order-name">Имя</label>
-      <input
-        class="order-form__input"
-        id="order-name"
-        name="name"
-        type="text"
-        placeholder="Введите ваше имя"
-        minlength="2"
-        autocomplete="given-name"
-        required
-      >
-    </div>
-
-    <div class="order-form__field">
-      <label class="order-form__label" for="order-email">E-mail</label>
-      <input
-        class="order-form__input"
-        id="order-email"
-        name="email"
-        type="email"
-        placeholder="example@mail.ru"
-        autocomplete="email"
-        required
-      >
-    </div>
-
-    <div class="order-form__field">
-      <label class="order-form__label" for="order-phone">Телефон</label>
-      <input
-        class="order-form__input"
-        id="order-phone"
-        name="phone"
-        type="tel"
-        inputmode="tel"
-        placeholder="+7 (900) 000-00-00"
-        pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
-        required
-      >
-      <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
-    </div>
-
-    <div class="order-form__field">
-      <label class="order-form__label" for="order-date">Дата связи</label>
-      <input
-        class="order-form__input"
-        id="order-date"
-        name="date"
-        type="date"
-      >
-    </div>
-
-    <div class="order-form__field">
-      <label class="order-form__label" for="order-topic">Тема заявки</label>
-      <select class="order-form__input" id="order-topic" name="topic" required>
-        <option value="">Выберите тему</option>
-        <option value="product">Заказ товара</option>
-        <option value="consultation">Консультация</option>
-        <option value="delivery">Доставка</option>
-      </select>
-    </div>
-
-    <div class="order-form__field">
-      <label class="order-form__label" for="order-comment">Комментарий</label>
-      <textarea
-        class="order-form__input"
-        id="order-comment"
-        name="comment"
-        rows="4"
-        placeholder="Укажите дополнительную информацию"
-      ></textarea>
-    </div>
-
-    <div class="order-form__field order-form__field--checkbox">
-      <label>
-        <input
-          class="order-form__checkbox"
-          id="order-agreement"
-          name="agreement"
-          type="checkbox"
-          required
-        >
-        Я согласен на обработку данных
-      </label>
-    </div>
-
-    <div class="order-form__actions">
-      <button class="button button--secondary" type="button" id="close-order-dialog">Закрыть</button>
-      <button class="button button--primary" type="submit">Отправить заявку</button>
-    </div>
-  </form>
-</dialog>
-
-<p class="success-message" id="success-message" hidden>
-  Форма успешно отправлена!
-</p>
-
-  <a href="#top" class="scroll-top" id="scroll-top" aria-label="Наверх">↑</a>
-
+  <button type="button" class="scroll-top" id="scroll-top" aria-label="Наверх" title="Наверх">
+    <svg class="scroll-top__icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" focusable="false"><path d="M16 28c-4 0-8-2-8-6 0-2 2-4 4-4 1 0 2 1 3 1s2-1 3-1c2 0 4 2 4 4 0 4-4 6-8 6zM8 14c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3zm16 0c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3zm-8-4c-1.5 0-3-1.5-3-3s1.5-3 3-3 3 1.5 3 3-1.5 3-3 3z"/></svg>
+  </button>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js?v=4"></script>
+  <script src="js/cart.js?v=4"></script>
+  <script src="js/recent.js?v=4"></script>
 </body>
 </html>
