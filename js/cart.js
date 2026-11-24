@@ -10,6 +10,20 @@
   var DELIVERY_KEY = 'lhp-delivery-v1';
   var PLACEHOLDER_IMAGE = 'images/placeholder-product.jpg';
   var FILE_CART_PREFIX = 'LHP_CART:';
+  var PRODUCT_IMAGES = {
+    'cat-food-murlyka': 'images/cat-food.jpg',
+    'cat-bed-cloud': 'images/cat-bed.jpg',
+    'cat-toy-feather': 'images/cat-toy.avif',
+    'dog-food-friend': 'images/dog-food.jpg',
+    'dog-toys-set': 'images/dog-set.webp',
+    'dog-bed-ortho': 'images/dog-bed.jpg',
+    'bird-food-grain': 'images/bird-food.jpg',
+    'bird-cage-comfort': 'images/bird-house.jpg',
+    'fish-food-flakes': 'images/fish-food.jpg',
+    'fish-aquarium-60': 'images/fish-aquarium.webp',
+    'rodent-food-grain': 'images/mouse-food.jpeg',
+    'rodent-wheel': 'images/mouse-wheel.jpg'
+  };
 
   var CITIES = [
     { id: 'moscow', label: 'Москва', base: 299, freeFrom: 3000 },
@@ -93,7 +107,7 @@
           slug: String(item.slug),
           name: String(item.name || 'Товар'),
           price: Number(item.price) || 0,
-          image: String(item.image || PLACEHOLDER_IMAGE),
+          image: PRODUCT_IMAGES[String(item.slug)] || String(item.image || PLACEHOLDER_IMAGE),
           category: String(item.category || ''),
           type: String(item.type || ''),
           qty: clampQuantity(item.qty),

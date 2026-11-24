@@ -3127,11 +3127,78 @@ a:hover {
 .cart-aside-sticky {
   position: sticky;
   top: calc(var(--navbar-height, 76px) + 18px);
-  max-height: calc(100vh - var(--navbar-height, 76px) - 36px);
-  overflow-y: auto;
-  padding-right: 4px;
-  scrollbar-width: thin;
-  overscroll-behavior: contain;
+}
+
+/* Компактные карточки итога и калькулятора на странице корзины */
+.cart-aside-sticky .cart-summary,
+.cart-aside-sticky .delivery-calculator {
+  padding: 1.05rem 1.1rem;
+}
+
+.cart-aside-sticky .cart-summary h2 {
+  margin-bottom: 0.65rem;
+  font-size: 1.05rem;
+}
+
+.cart-aside-sticky .summary-row {
+  padding: 0.3rem 0;
+  font-size: 0.85rem;
+}
+
+.cart-aside-sticky .summary-row--total {
+  margin-top: 0.35rem;
+  padding-top: 0.65rem;
+}
+
+.cart-aside-sticky .summary-row--total strong {
+  font-size: 1.3rem;
+}
+
+.cart-aside-sticky .free-delivery {
+  margin-top: 0.6rem;
+  padding: 0.45rem 0.6rem;
+  font-size: 0.74rem;
+}
+
+.cart-aside-sticky .cart-summary .btn {
+  padding: 0.55rem 0.85rem;
+  font-size: 0.9rem;
+}
+
+.cart-aside-sticky .summary-note {
+  margin-top: 0.55rem;
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.cart-aside-sticky .delivery-calculator {
+  margin-top: 0.85rem;
+}
+
+.cart-aside-sticky .delivery-calculator__subtitle {
+  margin-bottom: 0.65rem;
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+
+.cart-aside-sticky .delivery-calculator .form-label {
+  margin-bottom: 0.2rem;
+  font-size: 0.75rem;
+}
+
+.cart-aside-sticky .delivery-calculator .form-select {
+  padding: 0.45rem 0.65rem;
+  font-size: 0.85rem;
+}
+
+.cart-aside-sticky .delivery-result {
+  margin-top: 0.65rem;
+  padding: 0.6rem 0.7rem;
+  font-size: 0.78rem;
+}
+
+.cart-aside-sticky .delivery-result strong {
+  font-size: 0.95rem;
 }
 
 @media (max-width: 991.98px) {
